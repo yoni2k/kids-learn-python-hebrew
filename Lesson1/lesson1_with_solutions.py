@@ -47,6 +47,18 @@ def mult_minus_sum(a, b):
 
 
 def a_plus_b_mult_b_plus_c(a, b, c):
+    """
+        החזירו כפל של סכומים של a ו-b, וסכום של b ו-c
+        דוגמא:
+        a = 10
+        b = 20
+        c = 30
+        סכום a ו-b:
+            30
+        סכום b ו-c:
+            50
+        כפל: 150
+    """
     return (a + b) * (b + c)
 
 

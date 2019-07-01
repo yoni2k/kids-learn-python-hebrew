@@ -1,21 +1,17 @@
 def return_str(str):
     """  תחזירו את המחרוזת שקיבלתם """
-    return str
 
 
 def string_twice(my_str):
     """  תחזירו את המחרוזת שקיבלתם פעמיים """
-    return my_str*2
 
 
 def string_twice_with_space(my_str):
     """ החזירו את המחרוזת פעמיים עם רווח באמצע """
-    return my_str + ' ' + my_str
 
 
 def string_twice_with_newline(my_str):
     """ החזירו את המחרוזת פעמיים עם שורה חדשה באמצע """
-    return my_str + '\n' + my_str
 
 
 def my_name_is(name):
@@ -24,18 +20,16 @@ def my_name_is(name):
     תחזירו בדיוק (כולל הגרשיים)
     My name is "<name>"
      """
-    return "My name is \"" + name + "\""
 
 
 def mult(a, b):
     """ החזירו כפל מספרים """
-    return a * b
 
 
 def mult_minus_sum(a, b):
     """
     החזירו הפרש בין כפל ובין סכום של מספרים
-    דוגמא 1:
+    דוגמא:
     a = 10
     b = 20
     כפל: 200
@@ -43,11 +37,22 @@ def mult_minus_sum(a, b):
     הפרש:
         200 - 30 = 170
     """
-    return (a * b) - (a + b)
 
 
 def a_plus_b_mult_b_plus_c(a, b, c):
-    return (a + b) * (b + c)
+    """
+    החזירו כפל של סכומים של a ו-b, וסכום של b ו-c
+    דוגמא:
+    a = 10
+    b = 20
+    c = 30
+    סכום a ו-b:
+        30
+    סכום b ו-c:
+        50
+    כפל: 150
+    """
+
 
 
 """
