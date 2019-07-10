@@ -6,9 +6,13 @@
 # Download repository
 - Choose a place to put the code
 - Open command prompt
-    ```cd <directoryToPutCode>```
+    ```
+    cd <directoryToPutCode>
+    ```
 - Clone the repository from GitHub  
-    ```git clone https://github.com/yoni2k/kids-learn-python-hebrew.git```
+    ```
+    git clone https://github.com/yoni2k/kids-learn-python-hebrew.git
+    ```
 - Get the prerequisites & package installation:
     ```
     cd kids-learn-python-hebrew
