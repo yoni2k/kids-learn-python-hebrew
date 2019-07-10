@@ -1,56 +1,74 @@
+import pytest
+
+
 def return_str(my_str):
-    """  תחזירו את המחרוזת שקיבלתם """
+    """  תחזירו את המחרוזת שקיבלתם
+    דוגמאות:
+        "Aviad" ==> "Aviad"),
+        "Ido"   ==> "Ido"
+    """
 
 
 def string_twice(my_str):
-    """  תחזירו את המחרוזת שקיבלתם משורשת פעמיים """
+    """  תחזירו את המחרוזת שקיבלתם משורשרת פעמיים
+    דוגמאות:
+        "Aviad" ==> "AviadAviad"
+        "Ido"   ==> "IdoIdo"
+    """
 
 
 def string_twice_with_space(my_str):
-    """ החזירו את המחרוזת פעמיים עם רווח באמצע """
+    """ החזירו את המחרוזת משורשרת פעמיים עם רווח באמצע
+    דוגמאות:
+        "Aviad" ==> "Aviad Aviad"
+        "Ido"   ==> "Ido Ido"
+    """
 
 
 def string_twice_with_newline(my_str):
-    """ החזירו את המחרוזת פעמיים עם שורה חדשה באמצע """
+    """ החזירו את המחרוזת משורשרת פעמיים עם שורה חדשה באמצע
+    דוגמאות:
+        "Aviad" ==> "Aviad
+                     Aviad"
+        "Ido"   ==> "Ido
+                     Ido"
+    """
 
 
 def my_name_is(name):
     """
     מקבלים שם
-    תחזירו בדיוק (כולל הגרשיים)
-    My name is "<name>"
+    תחזירו בדיוק את המשפט הבא כולל הגרשיים
+    My name is "שם שקיבלתם"
+    דוגמאות:
+        "Ido"   ==> "My name is "Ido""
+        "Aviad" ==> "My name is "Aviad""
      """
 
 
 def mult(a, b):
-    """ החזירו כפל מספרים """
-
-
-def mult_minus_sum(a, b):
-    """
-    החזירו הפרש בין כפל ובין סכום של מספרים
-    דוגמא:
-    a = 10
-    b = 20
-    כפל: 200
-    סכום: 30
-    הפרש:
-        200 - 30 = 170
+    """ החזירו כפל מספרים שקיבלתם
+    דוגמאות:
+        a=3, b=4    ==> 12
+        a=2, b=5    ==> 10
     """
 
 
-def a_plus_b_mult_b_plus_c(a, b, c):
+def diff_in_age(big_brother_age_years, little_sister_age_months):
     """
-    החזירו כפל של סכומים של a ו-b, וסכום של b ו-c
-    דוגמא:
-    a = 10
-    b = 20
-    c = 30
-    סכום a ו-b:
-        30
-    סכום b ו-c:
-        50
-    כפל: 1500
+        בהנתן גיל של האח הגדול (בשנים) וגיל של האחות התינוקת (בחודשים), החזירו את ההפרש בגילאים בחודשים
+    דוגמאות:
+        big_brother_age_years=12, little_sister_age_months=4    ==> 140
+        big_brother_age_years=5, little_sister_age_months=4     ==> 56
+    """
+
+
+def months_sum_ages(age_years_brother1, age_years_brother2):
+    """ בהנתן גילאים של שני אחים בשנים, החזר את מספר החודשים של סכום הגילאים שלהם.
+    דוגמאות:
+            age_years_brother1=12,  age_years_brother2=10   ==> 264
+            age_years_brother1=4,   age_years_brother2= 8   ==> 144
+
     """
 
 
@@ -63,62 +81,89 @@ def a_plus_b_mult_b_plus_c(a, b, c):
 """
 
 
-def test_return_str():
-    my_str = "I love Python"
-    ret = return_str(my_str)
+@pytest.mark.parametrize("input_str, expected",
+                         [
+                             ("Aviad", "Aviad"),
+                             ("Ido", "Ido")
+                         ])
+def test_return_str(input_str, expected):
+    ret = return_str(input_str)
     print(ret)
-    assert ret == my_str
+    assert ret == expected
 
 
-def test_string_twice():
-    my_str = "AviadIdo"
-    ret = string_twice(my_str)
+@pytest.mark.parametrize("input_str, expected",
+                         [
+                             ("Aviad", "AviadAviad"),
+                             ("Ido", "IdoIdo")
+                         ])
+def test_string_twice(input_str, expected):
+    ret = string_twice(input_str)
     print(ret)
-    assert (my_str*2) == ret
+    assert ret == expected
 
 
-def test_string_twice_with_space():
-    my_str = "AviadIdo"
-    ret = string_twice_with_space(my_str)
+@pytest.mark.parametrize("input_str, expected",
+                         [
+                             ("Aviad", "Aviad Aviad"),
+                             ("Ido", "Ido Ido")
+                         ])
+def test_string_twice_with_space(input_str, expected):
+    ret = string_twice_with_space(input_str)
     print(ret)
-    assert (my_str + " " + my_str) == ret
+    assert ret == expected
 
 
-def test_string_twice_with_newline():
-    my_str = "AviadIdo"
-    ret = string_twice_with_newline(my_str)
+@pytest.mark.parametrize("input_str, expected",
+                         [
+                             ("Aviad", "Aviad\nAviad"),
+                             ("Ido", "Ido\nIdo")
+                         ])
+def test_string_twice_with_newline(input_str, expected):
+    ret = string_twice_with_newline(input_str)
     print(ret)
-    assert (my_str + "\n" + my_str) == ret
+    assert ret == expected
 
 
-def test_my_name_is():
-    name = "AviadIdo"
-    ret = my_name_is(name)
+@pytest.mark.parametrize("input_str, expected",
+                         [
+                             ('Aviad', 'My name is "Aviad"'),
+                             ('Ido', 'My name is "Ido"')
+                         ])
+def test_my_name_is(input_str, expected):
+    ret = my_name_is(input_str)
     print(ret)
-    assert ret == ("My name is \"" + name + "\"")
+    assert ret == expected
 
 
-def test_mult():
-    a = 3
-    b = 4
+@pytest.mark.parametrize("a, b, expected",
+                         [
+                             (3, 4, 12),
+                             (2, 5, 10)
+                         ])
+def test_mult(a, b, expected):
     ret = mult(a, b)
     print(ret)
-    assert ret == (a*b)
-    assert mult(2, 5) == 10
+    assert ret == expected
 
 
-def test_complex_math_statement1():
-    a = 3
-    b = 4
-    ret = mult_minus_sum(a, b)
+@pytest.mark.parametrize("big_brother_age_years, little_sister_age_months, expected",
+                         [
+                             (12,   4,  140),
+                             (5,    4,  56)
+                         ])
+def test_diff_in_age(big_brother_age_years, little_sister_age_months, expected):
+    ret = diff_in_age(big_brother_age_years, little_sister_age_months)
     print(ret)
-    assert ret == (a * b) - (a + b)
+    assert ret == expected
 
 
-def test_complex_math_statement2():
-    a = 3
-    b = 4
-    c = 5
-    ret = a_plus_b_mult_b_plus_c(a, b, c)
+@pytest.mark.parametrize("age_years_brother1, age_years_brother2, expected",
+                         [
+                             (12,   10, 264),
+                             (4,    8,  144)
+                         ])
+def test_months_sum_ages(age_years_brother1, age_years_brother2, expected):
+    ret = months_sum_ages(age_years_brother1, age_years_brother2)
     print(ret)
-    assert ret == (a + b) * (b + c)
+    assert ret == expected
