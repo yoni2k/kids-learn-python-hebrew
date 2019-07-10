@@ -75,8 +75,9 @@ print(2 * 3 + 2 * 4 + 2 * 5 + 2 * 6 + 2 * 7 + 2 * 8)
 print((2 * 3) + (2 * 4) + (2 * 5) + (2 * 6) + (2 * 7) + (2 * 8))
 """
 
+
 def what_day_today():
-    #return "Monday"
+    # return "Monday"
     return "Tuesday"
 
 
@@ -84,18 +85,14 @@ def test_what_day_today():
     assert what_day_today() == "Monday"
 
 
-def return_with_space(str):
+def return_with_space(my_str):
     """ Put code here """
-    return str + " "
+    return my_str + " "
+
 
 def test_return_with_space():
     print("Something")
     assert return_with_space("Aviad") == "Aviad "
 
-def name_age(name, age):
-    """
-    תדפיס
-    My name is <name> and my age is <age>
-    """
 
 print("Hi" + "\"" + "\'" + "\" " + "Avaid")

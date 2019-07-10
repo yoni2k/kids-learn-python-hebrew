@@ -55,10 +55,12 @@ plus(2, 3)
 plus(2, 8)
 """
 
+
 def plus(a, b):
     return a + b
 
-#print(plus(2, 3))
+
+# print(plus(2, 3))
 
 def test_plus():
     assert plus(2, 3) == 5
