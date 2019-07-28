@@ -98,7 +98,7 @@ def test_sum_ages(age1, age2, expected):
                              ("1",  "2",  3),
                              ("10", "12", 22),
                          ])
-def test_sum_ages(str_age1, str_age2, expected):
+def test_sum_ages_in_strings(str_age1, str_age2, expected):
     ret = sum_ages_in_strings(str_age1, str_age2)
     print(f"Answer returned: {ret}")
     assert ret == expected
@@ -128,7 +128,7 @@ def test_boolean_string_opposite(str_bool, expected):
                              ({1: "1"}, dict),
                              (set((1, 2)), set)
                          ])
-def test_boolean_string_opposite(var, expected):
+def test_get_type(var, expected):
     ret = get_type(var)
     print("Answer returned: " + str(ret))
     assert ret == expected
